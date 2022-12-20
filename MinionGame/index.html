@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title: PyScript</title>
+</head>
+<body>
+<button id="thebuttonid" type="button" pys-onClick="minion_game">run minion_game</button>
+<py-script>
+def minion_game(*args):
+    string = "banana"
+    scoreConconants = 0
+    scoreVowels = 0
+
+    for substrLen in range(1, len(string) + 1):
+        for startPos in range(len(string)):
+            if substrLen + startPos > len(string):
+                break
+            element = string[startPos:substrLen + startPos]
+            if element[0].lower() in "aeiou":
+                scoreVowels += 1
+            else:
+                scoreConconants += 1
+
+    if scoreVowels > scoreConconants:
+        pyscript.write("thebuttonid", "Kevin", scoreVowels)
+    elif scoreVowels == scoreConconants:
+        pyscript.write("thebuttonid", "Draw")
+    else:
+        pyscript.write("thebuttonid", "Stuart", scoreConconants)
+</py-script>
+</body>
+</html>

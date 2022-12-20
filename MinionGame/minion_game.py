@@ -21,7 +21,6 @@ def minion_game(string):
         print("Stuart", scoreConconants)
 
 
-
 if __name__ == '__main__':
     s = "BANANANAAAS"
     minion_game(s)
